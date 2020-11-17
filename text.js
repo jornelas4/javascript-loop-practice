@@ -25,7 +25,8 @@ $(document).ready(function () {
     });
 });
 
-function runLoops() {
+function runLoops()
+{
     // This variable will contain one of three strings:
     // "for-loop", "while-loop", or "do-while-loop"
     var selectedLoop = $("input[name=loop-type]:checked").val();
@@ -42,77 +43,81 @@ function runLoops() {
         "do-while-loop" ==>  runDoWhileLoop()
     */
 
-if (selectedLoop === "while-loop")
-{
-    runWhileLoop()
-}else
-    if (selectedLoop === "for-loop")
-    {
-        runForLoop()
-    }
+    if (selectedLoop === "while-loop")
+        {
+            runWhileLoop()
+        }
+    else if (selectedLoop === "for-loop")
+        {
+            runForLoop()
+        }
+    else if (selectedLoop === "do-while-loop")
+        {
+            runDoWhileLoop()
+        }
 }
 
+    function runWhileLoop() {
+        var number = parseInt($("#myNumber").val());
+        var output = "";
 
-function runWhileLoop() {
-    var number = parseInt($("#myNumber").val());
-    var output = "";
+        /*
+            Use a while loop to concatenate the letter A
+            "number" times to the string "output". For example,
+            if "number" is 5, then output should be "AAAAA".
 
-    /*
-        Use a while loop to concatenate the letter A
-        "number" times to the string "output". For example,
-        if "number" is 5, then output should be "AAAAA".
-
-        (Or for a challenge, concatenate the first "number" letters of the alphabet!)
-    */
-    var numA = 0;
-while(numA < number)
-{
-output += "A";
-numA++;
-}
-
-
-    $("#while-result").text(output);
-}
+            (Or for a challenge, concatenate the first "number" letters of the alphabet!)
+        */
+        var numA = 0;
+        while (numA < number)
+        {
+            output += "A";
+            numA++;
+        }
 
 
-function runForLoop() {
-    var number = parseInt($("#myNumber").val());
-    var sum = 0;
-
-    /*
-        Use a for loop to add the numbers 1 through "number"
-        into the variable "sum".
-    */
-
-    for (var i = 0; i < number; ++i)
-    {
-       sum += i;
+        $("#while-result").text(output);
     }
 
 
-    $("#for-result").text(sum);
-}
+    function runForLoop() {
+        var number = parseInt($("#myNumber").val());
+        var sum = 0;
+
+        /*
+            Use a for loop to add the numbers 1 through "number"
+            into the variable "sum".
+        */
+
+        for (var i = 0; i < number + 1; i++)
+        {
+            sum += i;
+        }
 
 
-function runDoWhileLoop() {
-    var number = parseInt($("#myNumber").val());
-    var output = "";
-
-    /*
-        Use a do-while loop to concatenate the numbers 1 through
-        "number" to the string "output". For example, if "number"
-        is 5, then output should be "12345".
-    */
-
-    do
-    {
-
-        addImageToDiv("#do-while-loop");
-        i++;
+        $("#for-result").text(sum);
     }
-    while (i < number - 1);
 
 
-    $("#do-while-result").text(output);
-}
+    function runDoWhileLoop()
+    {
+        var number = parseInt($("#myNumber").val());
+        var output = "";
+
+        /*
+            Use a do-while loop to concatenate the numbers 1 through
+            "number" to the string "output". For example, if "number"
+            is 5, then output should be "12345".
+        */
+        var numX = 0;
+        do
+        {
+            output += numX + 1;
+            numX++;
+
+        }
+        while (numX < number);
+
+
+        $("#do-while-result").text(output);
+    }
