@@ -19,21 +19,31 @@ $(document).ready(function () {
         /*
          Create a while loop that runs "num + 1" times.
 
+
+
          The body of the loop should contain the statement:
          addImageToDiv("#while-loop");
         */
-
-
-
-
-
-        /*
+        var j = 0;
+        while (j < num + 1)
+        {
+            addImageToDiv("#while-loop");
+            j++;
+        }
+       /*
          Create a do-while loop that runs "num - 1" times.
 
          The body of the loop should contain the statement:
          addImageToDiv("#do-while-loop");
         */
+        var i = 0;
+        do
+        {
 
+            addImageToDiv("#do-while-loop");
+            i++;
+        }
+        while (i < num - 1);
 
 
 
@@ -44,7 +54,10 @@ $(document).ready(function () {
          The body of the loop should contain the statement:
          addImageToDiv("#for-loop");
         */
-
+        for (var i = 0; i < num; i++)
+        {
+            addImageToDiv("#for-loop");
+        }
 
 
 

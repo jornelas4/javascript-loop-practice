@@ -42,10 +42,14 @@ function runLoops() {
         "do-while-loop" ==>  runDoWhileLoop()
     */
 
-
-
-
-
+if (selectedLoop === "while-loop")
+{
+    runWhileLoop()
+}else
+    if (selectedLoop === "for-loop")
+    {
+        runForLoop()
+    }
 }
 
 
@@ -60,6 +64,12 @@ function runWhileLoop() {
 
         (Or for a challenge, concatenate the first "number" letters of the alphabet!)
     */
+    var numA = 0;
+while(numA < number)
+{
+output += "A";
+numA++;
+}
 
 
     $("#while-result").text(output);
@@ -75,6 +85,12 @@ function runForLoop() {
         into the variable "sum".
     */
 
+    for (var i = 0; i < number; ++i)
+    {
+       sum += i;
+    }
+
+
     $("#for-result").text(sum);
 }
 
@@ -88,6 +104,14 @@ function runDoWhileLoop() {
         "number" to the string "output". For example, if "number"
         is 5, then output should be "12345".
     */
+
+    do
+    {
+
+        addImageToDiv("#do-while-loop");
+        i++;
+    }
+    while (i < number - 1);
 
 
     $("#do-while-result").text(output);
